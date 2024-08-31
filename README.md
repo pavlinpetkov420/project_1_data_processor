@@ -9,13 +9,16 @@ At the time of writing, the intent is to start a placehorder project that will u
 Change Log:  
 
 [2024-Aug-11]  
-**v0.0.0** - Subject of change :)
+**v0.0.0**
 - Create the project
 - Start documentation  
 - Add utility script to manage postgresql service
     - Tested on Windows OS
 
-
+[2024-08-31]
+**v0.0.1**
+- Pick a business probem that need database to resolve it
+    - Online Retail Application Database
 
 
 
