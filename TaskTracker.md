@@ -18,7 +18,7 @@
       - Created dba user, creds saved
   - Add documentation [mandatory] and utilities [optional] if needed
 
-2024-09-01 - In Progress
+2024-09-01, 2024-09-07 - In Progress
 
 What have to be done next?
 
