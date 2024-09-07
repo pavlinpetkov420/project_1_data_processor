@@ -20,10 +20,12 @@
 
 2024-09-01, 2024-09-07 - In Progress
 
-What have to be done next?
-
-- Create employer domain tables in public schema
-  - Script created for employees, departments, job_positions
-    - Next: Check out the script in detail again
+- Create employer domain tables in employees schema
+  - Script created for schema employees and tables employees, departments, job_positions
+    - Check out the script in detail again
     - Add FK constraints where needed
     - Execute the script
+    - Minor Enhancements & Troubleshooting
+
+What have to be done next?
+
