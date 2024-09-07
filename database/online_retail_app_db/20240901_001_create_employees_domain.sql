@@ -1,5 +1,5 @@
 /*
-Employees will be separated in its own schema called employees
+Employees will be separated in its own schema called "employees"
 Design:
 Employees: EmployeeID, FirstName, LastName, Email, Phone, DateOfBirth, ManagerID, PositionID
 Departments: DepartmentID, DepartmentName, department_abbreviation
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS employees.job_positions (
 -- #1 Not Working 
 
 SHOW SEARCH_PATH;
--- Returned "user" and public which are default. In order to add FK constraints need to add employees schema to search_path
+-- Returned "user" and public. In order to add FK constraints need to add employees schema to search_path
 
 SET search_path TO public, employees;
 
@@ -56,4 +56,4 @@ ALTER TABLE employees.employees
 ADD CONSTRAINT fk_employees_job_positions FOREIGN KEY (employee_id) REFERENCES job_positions(position_id);
 
 ALTER TABLE employees.job_positions
-ADD CONSTRAINT fk_job_positions_departments FOREIGN KEY (department_id) REFERENCES (departments.department_id);
+ADD CONSTRAINT fk_job_positions_departments FOREIGN KEY (department_id) REFERENCES departments(department_id);
