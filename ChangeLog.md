@@ -31,5 +31,10 @@
 - Finalize Employees Domain creation script
   - Execute script
 - Minor enhancements
+- Create Vendors Domain
+
+[2024-09-21]
+
+- Create Customers Domain
 
 </details>
