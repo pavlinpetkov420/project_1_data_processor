@@ -26,10 +26,10 @@
     - Add FK constraints where needed
     - Execute the script
     - Minor Enhancements & Troubleshooting
-  - Finish script for Vendors, following the described schema Model
-    - Script creation was started
-    - Add any enhancements you think are needed
-    - Execute the script - Done 09/08/2024
+- Create vendors domain, following the described schema Model
+  - Script creation was started
+  - Add any enhancements you think are needed
+  - Execute the script - Done 09/08/2024
 
 What have to be done next?
 
