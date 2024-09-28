@@ -37,4 +37,9 @@
 
 - Create Customers Domain
 
+[2024-09-28]
+
+- Update customers domain
+- Create deliveries domain
+
 </details>

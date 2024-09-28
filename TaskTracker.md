@@ -31,6 +31,12 @@
   - Add any enhancements you think are needed
   - Execute the script - Done 09/08/2024
 
+2024-09-23, 2024-09-28
+
+- Create customers domain
+- Create deliveries domain
+
 What have to be done next?
 
 - Check business problem description for further tasks
+  - documentation\BusinessProblem.md points 5 & 6

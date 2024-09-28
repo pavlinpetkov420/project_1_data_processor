@@ -10,7 +10,7 @@ We can see a lot of online retail applications nowadays like Flipkart, Amazon, M
 
 ### Functionalities  
 
-**[Done, Need Reviews]** - 1
+**[Done, Need Reviews]** - 1,2,3,4
 
 1. The system should store details about the employees working in the organization as well as vendors that assist in their functioning like packaging partners, delivery partners, product retailers and distributors, etc.
 2. The system should save the user or customer information that signs up on their platform or place an order in their retail application. This will generate a customer database which will help in email marketing and campaigns.
