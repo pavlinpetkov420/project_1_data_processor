@@ -1,3 +1,9 @@
+/*
+See database\online_retail_app_db\20240928_001_update_orders_domain.sql
+for latest updates over orders domain.
+Changes were required in order to develop step 4 and beyond of documentation\BusinessProblem.md
+*/
+
 -- Create schema for orders
 CREATE SCHEMA IF NOT EXISTS orders AUTHORIZATION p1dp_ora_dba;
 
@@ -18,6 +24,8 @@ CREATE TABLE orders.order_status_mapping (
 );
 
 -- Orders Table: Stores order information for each customer
+-- Fix for this table is added on a separate script
+-- Adding relation between orders.orders and customers.delivery_addresses 
 CREATE TABLE orders.orders (
     order_id UUID DEFAULT gen_random_uuid() PRIMARY KEY, -- Unique identifier for each order
     customer_id UUID NOT NULL,                          -- Links to the customers table
