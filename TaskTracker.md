@@ -38,5 +38,12 @@
 
 What have to be done next?
 
+- [DANGER!] Think what should be the ON DELETE clause on each FK for each domain
 - Check business problem description for further tasks
   - documentation\BusinessProblem.md points 5 & 6
+- After 5.products_domain is done, need to adjust orders domain to contain order details table
+  - This table will contain product from each order
+  - It needs a relation between orders and product
+  - We need to track also the stock quantity after a product is ordered!
+    - Do I need something like trigger with stored procedure?
+    - It should be in a transactional block, so we can rollback if we do not have enough in stock 
