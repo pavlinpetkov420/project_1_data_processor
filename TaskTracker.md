@@ -47,3 +47,7 @@ What have to be done next?
   - We need to track also the stock quantity after a product is ordered!
     - Do I need something like trigger with stored procedure?
     - It should be in a transactional block, so we can rollback if we do not have enough in stock 
+- For Next time I work on this:
+  - Finish scripts from 2024/09/29
+    - There is TODO list on one of the scripts
+  - Execute them against Database
