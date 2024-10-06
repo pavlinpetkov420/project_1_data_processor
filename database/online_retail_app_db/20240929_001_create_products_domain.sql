@@ -15,13 +15,17 @@ CREATE TABLE products.products (
     , category_id uuid --FK
     , subcategory_id uuid --FK
     , vendor_id uuid -- FK
-    , is_available BOOLEAN DEFAULT 1 -- Need to dynamically change this column if stock_quantity is 0
+    , is_available BOOLEAN DEFAULT FALSE -- Need to dynamically change this column if stock_quantity is 0
     , stock_quantuty INTEGER DEFAULT 0 NOT NULL 
     , created_by VARCHAR(50)
     , created_at TIMESTAMP DEFAULT clock_timestamp()
     , updated_by VARCHAR(50)
     , updated_at TIMESTAMP DEFAULT clock_timestamp()
 );
+
+ALTER TABLE products.products 
+    ADD CONSTRAINT pk_products
+        PRIMARY KEY (product_id);
 
 --  product_prices
 CREATE TABLE products.product_prices(
@@ -38,6 +42,7 @@ CREATE TABLE products.product_prices(
     , updated_by VARCHAR(50)
     , updated_at TIMESTAMP DEFAULT clock_timestamp()
 );
+
 
 -- PRODUCT_CATEGORIES
 CREATE TABLE products.product_categories(
@@ -63,11 +68,62 @@ CREATE TABLE products.product_subcategories(
     , updated_at TIMESTAMP DEFAULT clock_timestamp()
 );
 
-/*
-TODOs: 1 - Done, 2 - DONE, 3 - TODO
-- How to connect vendors with products?
-    - Through products.products and products.product_prices
-    - Reason is we can easily understand which vendor deliver us a product and at what price
-- To create an order_details table 
-- Create ALL constraints for this domain!
-*/
+-- All PKs
+
+
+ALTER TABLE products.products 
+    ADD CONSTRAINT pk_products
+        PRIMARY KEY (product_id);
+
+ALTER TABLE products.product_prices 
+    ADD CONSTRAINT pk_product_prices
+        PRIMARY KEY (price_id);
+
+ALTER TABLE products.product_categories 
+    ADD CONSTRAINT pk_product_categories
+        PRIMARY KEY (category_id);
+
+ALTER TABLE products.product_subcategories 
+    ADD CONSTRAINT pk_product_subcategories
+        PRIMARY KEY (subcategory_id);
+
+-- products.products FK
+
+ALTER TABLE products.products 
+    ADD CONSTRAINT fk_products_prices
+        FOREIGN KEY (price_id)
+        REFERENCES products.product_prices(price_id);
+
+ALTER TABLE products.products
+    ADD CONSTRAINT fk_products_categories
+        FOREIGN KEY (category_id)
+        REFERENCES products.product_categories(category_id);
+
+ALTER TABLE products.products
+    ADD CONSTRAINT fk_products_subcategories
+        FOREIGN KEY (subcategory_id)
+        REFERENCES products.product_subcategories(subcategory_id);
+
+ALTER TABLE products.products
+    ADD CONSTRAINT fk_products_vendors
+        FOREIGN KEY (vendor_id)
+        REFERENCES vendors.vendor(vendor_id);
+
+-- products.product_prices FKs
+
+ALTER TABLE products.product_prices
+    ADD CONSTRAINT fk_product_prices_products
+        FOREIGN KEY (product_id)
+        REFERENCES products.products(product_id);
+
+ALTER TABLE products.product_prices
+    ADD CONSTRAINT fk_product_prices_vendors
+        FOREIGN KEY (vendor_id)
+        REFERENCES vendors.vendor(vendor_id);
+
+-- products.product_subcategories
+
+ALTER TABLE products.product_subcategories
+    ADD CONSTRAINT fk_categories_subcategories
+        FOREIGN KEY (category_id)
+        REFERENCES products.product_categories(category_id);

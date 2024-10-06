@@ -2,7 +2,8 @@ SELECT * FROM pg_catalog.pg_constraint
 where substr(conname, 1, 2) <> 'pg';
 
 select * from information_schema.tables
-where table_schema not in ('information_schema', 'pg_catalog');
+where table_schema not in ('information_schema', 'pg_catalog')
+order by table_catalog, table_schema, table_name;
 
 
 -- Return All constraints tied to table name out of system schemas in Database

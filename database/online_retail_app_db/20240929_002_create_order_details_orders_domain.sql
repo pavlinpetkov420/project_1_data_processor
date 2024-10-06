@@ -18,3 +18,8 @@ ALTER TABLE orders.order_details
     ADD CONSTRAINT fk_orders_order_details
         FOREIGN KEY (order_id) 
         REFERENCES orders.orders (order_id);
+
+ALTER TABLE orders.order_details
+    ADD CONSTRAINT fk_order_details_products
+        FOREIGN KEY (product_id)
+        REFERENCES products.products(product_id);
